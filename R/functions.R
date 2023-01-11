@@ -5,6 +5,8 @@
 #' @param mug data.frame to be filled of coffee
 #' @param sugar logical specifying if suger is needed
 #' @return mug a data.frame filled of coffee
+#' @examples
+#' make_coffee(1:10)
 #' @importFrom stats na.omit
 #' @export
 make_coffee = function(coffee, mug, sugar=FALSE) {
