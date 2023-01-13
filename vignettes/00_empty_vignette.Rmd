@@ -1,0 +1,54 @@
+---
+title: "Empty vignette"
+author: "Florent Chuffart"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 3
+    number_sections: true
+vignette: >
+  %\VignetteIndexEntry{hydromad}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(collapse=TRUE, comment = "#>", fig.width=9, fig.height=6, eval=TRUE, echo=TRUE, results="verbatim")
+```
+
+# Title
+
+Here is a section
+
+## Subtitle
+
+Here is a subsection
+
+## Subtitle
+
+An other one with a R chunk:
+
+```{r}
+set.seed(1)
+x = runif(100)
+d = data.frame(x=x)
+d$y = 10*x + rnorm(100) 
+plot(d$x, d$y)
+m = lm(y~x, d) 
+abline(m, col=2, lty=2)
+summary(m)
+pred = predict(m)
+points(d$x, pred, col=2)
+```
+
+# Materiel and Methods
+
+
+# Session Information
+
+```{r, results="verbatim"}
+sessionInfo()
+```
